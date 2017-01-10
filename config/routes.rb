@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :jobs
   end
-   root 'welcome#index'
+  resources :jobs
+  root 'jobs#index'
 end
