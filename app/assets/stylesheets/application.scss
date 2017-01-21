@@ -35,30 +35,31 @@
 }
 
 .jumbotron {
-  background-image:url('https://ww3.sinaimg.cn/large/006y8lVagy1fbxgv97k52j30rc0ivwnk.jpg');
+  background-image:url('https://ww1.sinaimg.cn/large/006y8lVagy1fbyba117p7j30no0bt44u.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  padding-bottom: 110px;
+  padding-bottom: 50px;
 }
 
 .title {
   font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
-  text-align: left;
+  text-align: center;
+  padding: 5px;
   margin-top: 180px;
-  margin-bottom: 80px;
+  margin-bottom: 60px;
 }
 
 .slogan {
   margin-top: 10px;
   margin-bottom: 50px;
-  text-align: left;
+  text-align: center;
   color: white;
   top: 12px;
 }
 
 .lead {
   margin-bottom: 60px;
-  text-align: left;
+  text-align: center;
   color: white;
 }
 
@@ -71,5 +72,5 @@
 .thumbnail {
     border: 0 none;
     box-shadow: none;
-    margin-top: 60px;
+    margin-top: 10px;
 }
