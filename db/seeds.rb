@@ -5,16 +5,32 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-puts "这个seeds文件可以自动建立一个admin账号，并且创建10个public jobs,以及10各hidden jobs"
+puts 'Hello World!'
+puts '這個種子檔會自動建立一個帳號, 並且随机創建 10 個jobs，10个隐藏的jobs'
 
-create_account = User.create([email: 'test@gmail.com', password:'123456', password_confirmation: '123456', is_admin: 'true'])
-puts "Admin account created."
+create_account = User.create([email: 'admin@gmail.com', password: '111111', password_confirmation: '111111', is_admin: 'true'])
+puts 'Admin account is created successfully!'
 
-create_job = for i in 1..10 do
-  Job.create!([title: "Job no.#{i}", description: "这是用seeds文件建立的第 #{i} 个公开的工作", wage_upper_bound: rand(50..99)*100, wage_lower_bound: rand(10..49)*100, is_hidden: "false"])
+job_info = [
+  '招聘RoR工程师',
+  '招聘文案设计',
+  '招聘UI设计师',
+  '招聘Android开发工程师',
+  '招聘产品经理',
+  '招聘前端开发工程师',
+  '招聘市场营销',
+  '招聘php后台研发工程师',
+  '招聘python工程师',
+  '招聘高级JAVA研发工程师',
+  '招聘高级数据挖掘工程师',
+  '招聘高级客服经理'
+]
+create_jobs = for i in 1..10 do
+                Job.create!([title: job_info[rand(job_info.length)], description: "这是一个公开的工作", wage_upper_bound: rand(40..79) * 1000, wage_lower_bound: rand(20..39) * 1000, is_hidden: 'false'])
+              end
+for i in 1..10 do
+  Job.create!([title: job_info[rand(job_info.length)], description: "这是一个隐藏的工作", wage_upper_bound: rand(40..79) * 1000, wage_lower_bound: rand(20..39) * 1000, is_hidden: 'true'])
 end
-create_job = for i in 1..10 do
-  Job.create!([title: "Job no.#{i}", description: "这是用seeds文件建立的第 #{i} 个隐藏的工作", wage_upper_bound: rand(50..99)*100, wage_lower_bound: rand(10..49)*100, is_hidden: "true"])
-end
 
-puts "10 Hidden jobs created."
+puts '10 Public jobs created.'
+puts '10 Hidden jobs created.'
